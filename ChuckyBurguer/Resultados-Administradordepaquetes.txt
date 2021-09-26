@@ -1,0 +1,17 @@
+﻿
+
+Intentando recopilar información sobre la dependencia para el paquete 'EntityFramework.6.4.4' respecto al proyecto 'ChuckyBurguer.BL', con el destino '.NETFramework,Version=v4.5.2'
+La recopilación de información de dependencia tardó 347.02 ms
+Intentando resolver las dependencias para el paquete 'EntityFramework.6.4.4' con DependencyBehavior 'Lowest'
+La resolución de información de dependencia tardó 0 ms
+Resolviendo acciones para instalar el paquete 'EntityFramework.6.4.4'
+Se resolvieron las acciones para instalar el paquete 'EntityFramework.6.4.4'
+Recuperando paquete 'EntityFramework 6.4.4' de 'nuget.org'.
+Agregando el paquete 'EntityFramework.6.4.4' a la carpeta 'C:\Users\Henry La chira\Desktop\Chucky Burguer2\ChuckyBurguer\packages'
+El paquete 'EntityFramework.6.4.4' se agregó a la carpeta 'C:\Users\Henry La chira\Desktop\Chucky Burguer2\ChuckyBurguer\packages'
+El paquete 'EntityFramework.6.4.4' se agregó a 'packages.config'
+Ejecutando archivo de script 'C:\Users\Henry La chira\Desktop\Chucky Burguer2\ChuckyBurguer\packages\EntityFramework.6.4.4\tools\init.ps1'...
+'EntityFramework 6.4.4' se instaló correctamente en ChuckyBurguer.BL
+La ejecución de acciones de NuGet tardó 14.08 sec
+========== Finalizado ==========
+Tiempo transcurrido: 00:00:32.2637906
