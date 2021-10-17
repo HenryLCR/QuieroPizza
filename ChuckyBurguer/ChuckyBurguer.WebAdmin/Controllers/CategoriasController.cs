@@ -79,16 +79,16 @@ namespace ChuckyBurguer.WebAdmin.Controllers
 
             public ActionResult Detalle(int id)
             {
-                var categoria = _categoriasBL.ObtenerCategoria(id);
+                var producto = _categoriasBL.ObtenerCategoria(id);
 
-                return View(categoria);
+                return View(producto);
             }
 
             public ActionResult Eliminar(int id)
             {
-                var categoria = _categoriasBL.ObtenerCategoria(id);
+                var producto = _categoriasBL.ObtenerCategoria(id);
 
-                return View(categoria);
+                return View(producto);
             }
 
             [HttpPost]
