@@ -11,12 +11,13 @@ namespace ChuckyBurguer.WebAdmin.Controllers
     {
         //variable
         ProductosBL _productosBL;
+        //CategoriasBL _categoriasBL;
 
         //constructor
         public ProductosController()
         {
             _productosBL = new ProductosBL();
-
+            //_categoriasBL = new CategoriasBL();
         }
 
 
@@ -32,6 +33,10 @@ namespace ChuckyBurguer.WebAdmin.Controllers
         public ActionResult Crear()
         {
             var nuevoProducto = new Producto();
+
+            //var categorias = _categoriasBL.ObtenerCategorias();
+            //ViewBag.ListaCategorias = new SelectList(categorias, "Id", "Descripcion");
+
             return View(nuevoProducto);
         }
 
