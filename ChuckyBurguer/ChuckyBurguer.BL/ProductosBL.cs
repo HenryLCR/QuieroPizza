@@ -38,8 +38,8 @@ namespace ChuckyBurguer.BL
             {
                 var productoExistente = _contexto.Productos.Find(producto.Id);
 
+                //actualizable para meter mas ejemplo cantidad, categorias etc...
                 productoExistente.Descripcion = producto.Descripcion;
-                //productoExistente.CategoriaId = producto.CategoriaId;
                 productoExistente.Precio = producto.Precio;
                 
             }

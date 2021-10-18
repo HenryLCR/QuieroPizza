@@ -34,9 +34,6 @@ namespace ChuckyBurguer.WebAdmin.Controllers
         {
             var nuevoProducto = new Producto();
 
-            //var categorias = _categoriasBL.ObtenerCategorias();
-            //ViewBag.ListaCategorias = new SelectList(categorias, "Id", "Descripcion");
-
             return View(nuevoProducto);
         }
 
@@ -60,6 +57,7 @@ namespace ChuckyBurguer.WebAdmin.Controllers
         public ActionResult Editar(Producto producto)
         {
             _productosBL.GuardarProducto(producto);
+
             return RedirectToAction("Index");
         }
 
