@@ -10,6 +10,7 @@ namespace ChuckyBurguer.BL
     {
         //constructor
         Contexto _contexto;
+
         //propiedad
         public List<Producto> ListadeProductos { get; set; }
         //constructor
@@ -22,7 +23,10 @@ namespace ChuckyBurguer.BL
         //funcion ue devuelve lista de productos
         public List<Producto> ObtenerProductos()
         {
-            ListadeProductos = _contexto.Productos.ToList();
+            ListadeProductos = _contexto.Productos
+                .Include("Categoria")
+                .ToList();
+
             return ListadeProductos;
         }
 
@@ -40,8 +44,9 @@ namespace ChuckyBurguer.BL
 
                 //actualizable para meter mas ejemplo cantidad, categorias etc...
                 productoExistente.Descripcion = producto.Descripcion;
+                productoExistente.CategoriaId = producto.CategoriaId;
                 productoExistente.Precio = producto.Precio;
-                
+                productoExistente.UrlImagen = producto.UrlImagen;
             }
             
             _contexto.SaveChanges();
@@ -50,7 +55,9 @@ namespace ChuckyBurguer.BL
         // Esto es del Get: Editar
         public Producto ObtenerProducto(int id)
         {
-            var producto = _contexto.Productos.Find(id);
+            var producto = _contexto.Productos
+                .Include("Categoria").FirstOrDefault(p => p.Id == id);
+
             return producto;
         }
 
@@ -58,6 +65,7 @@ namespace ChuckyBurguer.BL
         public void EliminarProducto(int id)
         {
             var producto = _contexto.Productos.Find(id);
+
             _contexto.Productos.Remove(producto);
             _contexto.SaveChanges();
         }

@@ -16,6 +16,7 @@ namespace ChuckyBurguer.BL
         //propiedades
         public int Id { get; set; }
 
+        [Display(Name = "Descripción")]
         [Required(ErrorMessage = "Ingrese la descripción")]
         [MinLength(3, ErrorMessage = "Ingrese minimo 3 caracteres")]
         [MaxLength(20, ErrorMessage = "Ingrese un maximo de 20 caracteres")]
@@ -24,9 +25,13 @@ namespace ChuckyBurguer.BL
         [Required(ErrorMessage = "Ingrese el precio")]
         [Range(0, 1000, ErrorMessage = "Ingrese un precio entre 0 y 1000")]
         public double Precio { get; set; }
+        public int CategoriaId { get; set; }
         public Categoria Categoria { get; set; }
+
+        [Display(Name = "Imagen")]
+        public string UrlImagen { get; set; }
+
         public bool Activo { get; set; }
-        //public int CategoriaId { get; set; }
         //public int Existencia { get; set; }
     }
 }

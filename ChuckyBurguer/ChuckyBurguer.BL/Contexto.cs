@@ -20,6 +20,7 @@ namespace ChuckyBurguer.BL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            //Database.SetInitializer(new DatosdeInicio());
         }
 
 
