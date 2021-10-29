@@ -30,6 +30,17 @@ namespace ChuckyBurguer.BL
             return ListadeProductos;
         }
 
+        public List<Producto> ObtenerProductosActivos()
+        {
+            ListadeProductos = _contexto.Productos
+                .Include("Categoria")
+                .Where(r => r.Activo == true)
+                .OrderBy(r => r.Descripcion)
+                .ToList();
+
+            return ListadeProductos;
+        }
+
 
         //Esto es del Get: Crear
         public void GuardarProducto(Producto producto)

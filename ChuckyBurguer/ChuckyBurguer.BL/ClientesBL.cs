@@ -36,6 +36,7 @@ namespace ChuckyBurguer.BL
             return ListadeClientes;
         }
 
+
         public void GuardarCliente(Cliente cliente)
         {
             if (cliente.Id == 0)
@@ -55,12 +56,16 @@ namespace ChuckyBurguer.BL
             _contexto.SaveChanges();
         }
 
+
+
         public Cliente ObtenerCliente(int id)
         {
             var cliente = _contexto.Clientes.Find(id);
 
             return cliente;
         }
+
+
 
         public void EliminarCliente(int id)
         {
