@@ -19,7 +19,6 @@ namespace ChuckyBurguer.BL
 
         public List<Orden> ObtenerOrdenes()
         {
-
             ListadeOrdenes = _contexto.Ordenes
                 .Include("Cliente")
                 .ToList();
@@ -69,9 +68,6 @@ namespace ChuckyBurguer.BL
         }
 
 
-
-
-
         public void GuardarOrdenDetalle(OrdenDetalle ordenDetalle)
         {
             var producto = _contexto.Productos.Find(ordenDetalle.ProductoId);
@@ -87,6 +83,8 @@ namespace ChuckyBurguer.BL
             _contexto.SaveChanges();
         }
 
+
+
         public void EliminarOrdenDetalle(int id)
         {
             var ordenDetalle = _contexto.OrdenDetalle.Find(id);
@@ -97,6 +95,7 @@ namespace ChuckyBurguer.BL
 
             _contexto.SaveChanges();
         }
+
 
     }
 }
