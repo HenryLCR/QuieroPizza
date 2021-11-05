@@ -7,6 +7,8 @@ using System.Web.Mvc;
 
 namespace ChuckyBurguer.WebAdmin.Controllers
 {
+
+    //[Authorize]
     public class OrdenesController : Controller
     {
         //Variables
@@ -20,7 +22,7 @@ namespace ChuckyBurguer.WebAdmin.Controllers
             _clientesBL = new ClientesBL();
         }
 
-        //get: Ordenes
+        //get: ordenes
         public ActionResult Index()
         {
             var listadeOrdenes = _ordenesBL.ObtenerOrdenes();
@@ -93,7 +95,7 @@ namespace ChuckyBurguer.WebAdmin.Controllers
                 return RedirectToAction("Index");
             }
 
-            var clientes = _clientesBL.ObtenerClientes();//activos
+            var clientes = _clientesBL.ObtenerClientesActivos();//activos
 
             ViewBag.ClienteId = new SelectList(clientes, "Id", "Nombre", orden.ClienteId);
 

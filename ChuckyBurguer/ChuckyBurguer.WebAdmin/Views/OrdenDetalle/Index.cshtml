@@ -4,7 +4,7 @@
     ViewBag.Title = "Orden Detalle";
 }
 
-<h2>Detalle de la orden No: @Model.Id</ h2 >
+<h2>Detalle de la orden No: @Model.Id</h2>
 
     <table class="table table-bordered table-hover">
         <tr>
@@ -30,7 +30,7 @@
     </table>
 
 <p>
-    @Html.ActionLink("Nuevo Producto", "Crear")
+    @Html.ActionLink("Nuevo Producto", "Crear", new { id = Model.Id })
 </p>
 <table class="table">
     <tr>

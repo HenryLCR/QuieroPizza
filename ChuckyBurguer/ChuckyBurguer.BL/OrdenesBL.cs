@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace ChuckyBurguer.BL
 {
+
+    
     public class OrdenesBL
     {
         Contexto _contexto;
         public List<Orden> ListadeOrdenes { get; set; }
+
 
         public OrdenesBL()
         {
@@ -17,11 +20,13 @@ namespace ChuckyBurguer.BL
             ListadeOrdenes = new List<Orden>();
         }
 
+
         public List<Orden> ObtenerOrdenes()
         {
+
             ListadeOrdenes = _contexto.Ordenes
-                .Include("Cliente")
-                .ToList();
+               .Include("Cliente")
+               .ToList();
 
             return ListadeOrdenes;
         }

@@ -40,8 +40,6 @@ namespace ChuckyBurguer.BL
         public int Cantidad { get; set; }
         public double Precio { get; set; }
         public double Total { get; set; }
+
     }
-
-
-
 }

@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace ChuckyBurguer.WebAdmin.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class OrdenDetalleController : Controller
     {
         OrdenesBL _ordenBL;
@@ -18,6 +18,8 @@ namespace ChuckyBurguer.WebAdmin.Controllers
             _ordenBL = new OrdenesBL();
             _productosBL = new ProductosBL();
         }
+
+
 
         // GET: OrdenesDetalle
         public ActionResult Index(int id)

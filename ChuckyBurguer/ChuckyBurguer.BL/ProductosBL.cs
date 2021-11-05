@@ -10,9 +10,10 @@ namespace ChuckyBurguer.BL
     {
         //constructor
         Contexto _contexto;
-
         //propiedad
         public List<Producto> ListadeProductos { get; set; }
+      
+        
         //constructor
         public ProductosBL()
         {
@@ -25,10 +26,13 @@ namespace ChuckyBurguer.BL
         {
             ListadeProductos = _contexto.Productos
                 .Include("Categoria")
+                .OrderBy(r => r.Categoria.Descripcion)
+                .ThenBy(r => r.Descripcion)
                 .ToList();
 
             return ListadeProductos;
         }
+
 
         public List<Producto> ObtenerProductosActivos()
         {
