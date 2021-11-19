@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace ChuckyBurguer.WebAdmin.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class OrdenDetalleController : Controller
     {
         OrdenesBL _ordenBL;

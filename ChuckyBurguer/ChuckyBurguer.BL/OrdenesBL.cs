@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace ChuckyBurguer.BL
 {
-
-    
     public class OrdenesBL
     {
         Contexto _contexto;
         public List<Orden> ListadeOrdenes { get; set; }
-
 
         public OrdenesBL()
         {
@@ -20,13 +17,11 @@ namespace ChuckyBurguer.BL
             ListadeOrdenes = new List<Orden>();
         }
 
-
         public List<Orden> ObtenerOrdenes()
         {
-
             ListadeOrdenes = _contexto.Ordenes
-               .Include("Cliente")
-               .ToList();
+                .Include("Cliente")
+                .ToList();
 
             return ListadeOrdenes;
         }
@@ -72,7 +67,6 @@ namespace ChuckyBurguer.BL
             _contexto.SaveChanges();
         }
 
-
         public void GuardarOrdenDetalle(OrdenDetalle ordenDetalle)
         {
             var producto = _contexto.Productos.Find(ordenDetalle.ProductoId);
@@ -88,8 +82,6 @@ namespace ChuckyBurguer.BL
             _contexto.SaveChanges();
         }
 
-
-
         public void EliminarOrdenDetalle(int id)
         {
             var ordenDetalle = _contexto.OrdenDetalle.Find(id);
@@ -100,7 +92,5 @@ namespace ChuckyBurguer.BL
 
             _contexto.SaveChanges();
         }
-
-
     }
 }

@@ -17,7 +17,6 @@ namespace ChuckyBurguer.BL
 
         public List<OrdenDetalle> ListadeOrdenDetalle { get; set; }
 
-        //constructor
         public Orden()
         {
             Activo = true;
@@ -25,7 +24,6 @@ namespace ChuckyBurguer.BL
 
             ListadeOrdenDetalle = new List<OrdenDetalle>();
         }
-
     }
 
     public class OrdenDetalle
@@ -40,6 +38,5 @@ namespace ChuckyBurguer.BL
         public int Cantidad { get; set; }
         public double Precio { get; set; }
         public double Total { get; set; }
-
     }
 }

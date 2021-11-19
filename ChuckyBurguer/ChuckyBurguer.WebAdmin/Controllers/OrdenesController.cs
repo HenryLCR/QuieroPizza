@@ -8,7 +8,7 @@ using System.Web.Mvc;
 namespace ChuckyBurguer.WebAdmin.Controllers
 {
 
-    //[Authorize]
+    [Authorize]
     public class OrdenesController : Controller
     {
         //Variables

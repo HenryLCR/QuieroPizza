@@ -13,7 +13,7 @@ namespace ChuckyBurguer.BL
         {
             Activo = true;
         }
-        //propiedades
+
         public int Id { get; set; }
 
         [Display(Name = "Descripción")]
@@ -32,6 +32,5 @@ namespace ChuckyBurguer.BL
         public string UrlImagen { get; set; }
 
         public bool Activo { get; set; }
-        //public int Existencia { get; set; }
     }
 }

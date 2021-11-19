@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace ChuckyBurguer.WebAdmin.Controllers
 {
+    [Authorize]
     public class ProductosController : Controller
     {
         //variable

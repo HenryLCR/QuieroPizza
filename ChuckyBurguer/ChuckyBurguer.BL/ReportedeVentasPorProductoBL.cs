@@ -17,7 +17,6 @@ namespace ChuckyBurguer.BL
             ListadeVentasPorProducto = new List<ReporteVentasPorProducto>();
         }
 
-
         public List<ReporteVentasPorProducto> ObtenerVentasPorProducto()
         {
             ListadeVentasPorProducto = _contexto.OrdenDetalle
