@@ -7,22 +7,19 @@ using System.Web.Mvc;
 
 namespace ChuckyBurguer.WebAdmin.Controllers
 {
-
     [Authorize]
     public class OrdenesController : Controller
     {
-        //Variables
         OrdenesBL _ordenesBL;
         ClientesBL _clientesBL;
 
-        //Constructor
         public OrdenesController()
         {
             _ordenesBL = new OrdenesBL();
             _clientesBL = new ClientesBL();
         }
 
-        //get: ordenes
+        // GET: Ordenes
         public ActionResult Index()
         {
             var listadeOrdenes = _ordenesBL.ObtenerOrdenes();
@@ -30,8 +27,6 @@ namespace ChuckyBurguer.WebAdmin.Controllers
             return View(listadeOrdenes);
         }
 
-
-        //Get:Crear orden
         public ActionResult Crear()
         {
             var nuevaOrden = new Orden();
@@ -42,7 +37,6 @@ namespace ChuckyBurguer.WebAdmin.Controllers
             return View(nuevaOrden);
         }
 
-        //Post
         [HttpPost]
         public ActionResult Crear(Orden orden)
         {
@@ -66,8 +60,6 @@ namespace ChuckyBurguer.WebAdmin.Controllers
             return View(orden);
         }
 
-
-        //Editar
         public ActionResult Editar(int id)
         {
             var orden = _ordenesBL.ObtenerOrden(id);
@@ -78,7 +70,6 @@ namespace ChuckyBurguer.WebAdmin.Controllers
             return View(orden);
         }
 
-        //Post Editar
         [HttpPost]
         public ActionResult Editar(Orden orden)
         {
@@ -95,7 +86,7 @@ namespace ChuckyBurguer.WebAdmin.Controllers
                 return RedirectToAction("Index");
             }
 
-            var clientes = _clientesBL.ObtenerClientesActivos();//activos
+            var clientes = _clientesBL.ObtenerClientesActivos();
 
             ViewBag.ClienteId = new SelectList(clientes, "Id", "Nombre", orden.ClienteId);
 
@@ -108,6 +99,5 @@ namespace ChuckyBurguer.WebAdmin.Controllers
 
             return View(orden);
         }
-
     }
 }

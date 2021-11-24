@@ -19,8 +19,6 @@ namespace ChuckyBurguer.WebAdmin.Controllers
             _productosBL = new ProductosBL();
         }
 
-
-
         // GET: OrdenesDetalle
         public ActionResult Index(int id)
         {
@@ -62,7 +60,6 @@ namespace ChuckyBurguer.WebAdmin.Controllers
             return View(ordenDetalle);
         }
 
-        //Get Elimnar
         public ActionResult Eliminar(int id)
         {
             var ordenDetalle = _ordenBL.ObtenerOrdenDetallePorId(id);
@@ -77,6 +74,5 @@ namespace ChuckyBurguer.WebAdmin.Controllers
 
             return RedirectToAction("Index", new { id = ordenDetalle.OrdenId });
         }
-
     }
 }
